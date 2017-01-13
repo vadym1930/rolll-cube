@@ -1,0 +1,73 @@
+//import module
+@import 'vars';
+@import 'general'; 
+@import 'animation';
+
+
+// cube stuff
+.container {
+		h1 {
+		color: #545454;
+		text-align: center;
+		margin-top: 40px;
+	}
+  /*it means that child element have 3d pixels for view*/
+  perspective: 750px; 
+  .shape {
+    will-change: transform;
+    /*our sides must be position absolute so we need non static parent*/
+    position: relative;
+
+    /*centered our shape*/
+    margin: 0 auto;
+    top: $width;
+    width: $width;
+    height: $width;
+
+		// animation stuff		
+    animation-name: cuberoll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    /*gives us 3d view*/
+    transform-style: preserve-3d;
+		div {
+			/*gives us position relative to the first ustatic parent*/
+			position: absolute;
+			border: 1px solid #545454;
+			width: $width;
+			height: $width;
+			p {
+				text-align: center;
+				margin-top: 40%;
+				font-size: 40px;
+				font-family: 'Poiret One', cursive;
+			} 
+		}
+  	.side1 {
+  	  transform: rotateX($angle90) translateZ($halfwidth);
+		
+  	}
+  	.side2 {
+  	  transform: translateZ($halfwidth);
+  	}
+  	.side3 {
+  	  transform: rotateY($angle90) translateZ($halfwidth);
+  	}
+
+  	.side4 {
+  	  transform: rotateY($angle180) translateZ($halfwidth);
+  	}
+
+  	.side5 {
+  	  transform: rotateY(-$angle90) translateZ($halfwidth);
+  	}
+
+  	.side6 {
+    	transform: rotateX(-$angle90) translateZ($halfwidth);
+  	}
+  } // end shape
+} // end container
+
+

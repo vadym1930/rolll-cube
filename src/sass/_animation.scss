@@ -1,0 +1,6 @@
+@keyframes cuberoll {
+  0% { transform: rotateX($angle0) rotateY($angle0) }
+  25% { transform: rotate(-$angle360) rotateY($angle360) }
+  50% { transform: rotateX($angle0) rotateY($angle0) }
+  100% { transform: rotate($angle360) rotateY(-$angle360) }
+}
